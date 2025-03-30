@@ -1,0 +1,13 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: ./docker/node/Dockerfile
+    tty: true
+    volumes:
+      - ./src:/app
+    environment:
+      - WATCHPACK_POLLING=true
+    command: sh -c "npm run dev"
+    ports:
+      - "13000:3000"
