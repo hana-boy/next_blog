@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# destroy docker container
+docker compose down
+
+# create docker images
+docker compose build --no-cache
+
+# npm install
+docker compose run --rm app sh -c 'npm install'
+
+# run docker container
+docker compose up -d
