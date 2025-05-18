@@ -3,6 +3,7 @@ import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import { getPostById } from '@/lib/api';
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export default async function BlogDetailPage({ params }: any) {
   const post = await getPostById(params.id);
 
