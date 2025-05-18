@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Hana Boy Blog",
-  description: "Hana Boy Blog",
+  title: "Hana Boy Contents",
+  description: "Hana Boy Contents",
 };
 
 export default function RootLayout({
@@ -15,7 +15,7 @@ export default function RootLayout({
     <html lang="ja">
       <body className="bg-gray-100 text-gray-900">
         <header className="bg-black text-white p-4 text-center text-xl font-bold">
-          Hana Boy Blog
+          Hana Boy
         </header>
         <main className="max-w-4xl mx-auto p-4">{children}</main>
       </body>
