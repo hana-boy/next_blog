@@ -3,12 +3,14 @@ import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import { getPostById } from '@/lib/api';
 
-export default async function BlogDetailPage({ params }: { params: { id: string } }) {
-  const post = await getPostById(params.id);
+type PageProps = {
+  params: { id: string };
+  searchParams?: { [key: string]: string | string[] };
+};
 
-  if (!post) {
-    notFound();
-  }
+export default async function BlogDetailPage({ params }: PageProps) {
+  const post = await getPostById(params.id);
+  if (!post) notFound();
 
   return (
     <div className="max-w-3xl mx-auto px-4 py-8">
