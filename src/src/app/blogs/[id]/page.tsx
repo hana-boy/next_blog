@@ -1,16 +1,15 @@
-import React from 'react';
 import { notFound } from 'next/navigation';
 import ReactMarkdown from 'react-markdown';
-import { getPostById } from '@/lib/api';
 import remarkGfm from 'remark-gfm';
+import { getPostById } from '@/lib/api';
 
-export default async function BlogDetailPage({
-  params,
-}: {
-  params: { id: string };
-}) {
-  const post = await getPostById(params.id);
-  console.log(post);
+type Props = {
+  params: { id: string } | Promise<{ id: string }>;
+};
+
+export default async function BlogDetailPage({ params }: Props) {
+  const resolvedParams = await Promise.resolve(params);
+  const post = await getPostById(resolvedParams.id);
 
   if (!post) {
     notFound();
