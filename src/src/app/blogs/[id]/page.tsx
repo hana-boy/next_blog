@@ -3,11 +3,7 @@ import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import { getPostById } from '@/lib/api';
 
-type Props = {
-  params: { id: string };
-};
-
-export default async function BlogDetailPage({ params }: Props) {
+export default async function BlogDetailPage({ params }: { params: { id: string } }) {
   const post = await getPostById(params.id);
 
   if (!post) {
