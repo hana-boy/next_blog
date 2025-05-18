@@ -1,14 +1,7 @@
 async function fetchPosts() {
-  // あとでキーをセキュアにする
-  // const res = await fetch(`${process.env.NEXT_PUBLIC_MICROCMS_API_URL}/v1/blogs`, {
-  //   headers: {
-  //     "X-MICROCMS-API-KEY": `${process.env.NEXT_PUBLIC_MICROCMS_API_KEY}`,
-  //     "Content-Type": "application/json"
-  //   }
-  // });
-  const res = await fetch(`https://hana-boy.microcms.io/api/v1/blogs`, {
+  const res = await fetch(`${process.env.MICROCMS_API_URL}/v1/blogs`, {
     headers: {
-      "X-MICROCMS-API-KEY": `L8xFeZ40Ws83R0sykIRVvzABoHebHEaMIoh0`,
+      "X-MICROCMS-API-KEY": `${process.env.MICROCMS_API_KEY}`,
       "Content-Type": "application/json"
     }
   });
