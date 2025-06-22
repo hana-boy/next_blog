@@ -8,6 +8,6 @@ services:
       - ./src:/app
     environment:
       - WATCHPACK_POLLING=true
-    # command: sh -c "npm run dev"
+    command: sh -c "npm run dev"
     ports:
       - "13000:3000"
