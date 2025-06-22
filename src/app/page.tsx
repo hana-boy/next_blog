@@ -57,7 +57,7 @@ export default async function HomePage() {
       {/* ヘッダー */}
       <header className="border-b border-gray-200">
         <div className="max-w-4xl mx-auto px-6 py-8">
-          <h1 className="text-4xl font-bold text-black mb-2">HanaBoy Blog</h1>
+          <h1 className="text-4xl font-bold text-black mb-2">hana-boy Blog</h1>
           <p className="text-gray-600 text-lg">エンジニア関連の記事を書いているブログ</p>
         </div>
       </header>
