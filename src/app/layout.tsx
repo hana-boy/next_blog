@@ -18,7 +18,7 @@ export default function RootLayout({
       <head>
         <Script
           strategy="afterInteractive"
-          src={`https://www.googletagmanager.com/gtag/js?id=G-PD81W30D25`} // ← 自分のIDに置き換え
+          src={`https://www.googletagmanager.com/gtag/js?id=G-PD81W30D25`}
         />
         <Script
           id="google-analytics"
