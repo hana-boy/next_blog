@@ -3,11 +3,7 @@ import { getBlogPosts } from "@/lib/microcms"
 
 export async function GET(request: Request) {
   try {
-    const { searchParams } = new URL(request.url)
-    const limit = Number.parseInt(searchParams.get("limit") || "10")
-    const offset = Number.parseInt(searchParams.get("offset") || "0")
-
-    const response = await getBlogPosts(limit, offset)
+    const response = await getBlogPosts(30, 0)
 
     return NextResponse.json({
       posts: response.contents.map((post) => ({
