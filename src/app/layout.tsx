@@ -1,9 +1,10 @@
 import type { Metadata } from 'next'
 import './globals.css'
+import { Footer } from '@/components/footer'
 
 export const metadata: Metadata = {
-  title: 'HanaBoy TechBlog',
-  description: 'HanaBoy TechBlog',
+  title: 'hana-boy TechBlog',
+  description: 'hana-boy TechBlog',
 }
 
 export default function RootLayout({
@@ -14,14 +15,8 @@ export default function RootLayout({
   return (
     <html lang="ja">
       <body className="bg-gray-100 text-gray-900">
-        <main className="max-w-6xl mx-auto p-6">{children}</main>
-        <footer className="border-t border-gray-200 mt-20">
-        <div className="max-w-4xl mx-auto px-6 py-8">
-          <p className="text-gray-500 text-center">
-            © 2025 HanaBoy Blog. All rights reserved.
-          </p>
-        </div>
-      </footer>
+        <main className="max-w-5xl mx-auto p-6">{children}</main>
+        <Footer />
       </body>
     </html>
   )
