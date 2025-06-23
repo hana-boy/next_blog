@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server"
-import { getBlogPost } from "@/lib/microcms"
+import { getBlogPost, parseTagsString } from "@/lib/microcms"
 
 export async function GET(request: Request, { params }: { params: Promise<{ slug: string }> }) {
   try {
@@ -13,7 +13,7 @@ export async function GET(request: Request, { params }: { params: Promise<{ slug
       content: post.content,
       excerpt: post.excerpt,
       publishedAt: post.publishedAt,
-      tags: post.tags?.split(',').map((tag: string) => tag.trim()) ?? [],
+      tags: parseTagsString(post.tags), // 文字列を配列に変換
       author: post.author,
       eyecatch: post.eyecatch,
     })

@@ -1,5 +1,40 @@
 import Link from "next/link"
 import { ArrowLeft, Github, ExternalLink, Mail, MapPin, Calendar, Code, Palette, Coffee, Languages } from "lucide-react"
+import { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "自己紹介 | hana-boy Blog",
+  description:
+    "SREエンジニアのhana-boyの自己紹介ページ。経歴、スキル、趣味について紹介しています。",
+  keywords: "エンジニア, React, Next.js, TypeScript, SRE",
+  authors: [{ name: "hana-boy" }],
+  creator: "hana-boy",
+
+  openGraph: {
+    title: "自己紹介 | hana-boy Blog",
+    description: "エンジニアのhana-boyの自己紹介ページ",
+    url: `${process.env.NEXT_PUBLIC_BASE_URL || "https://hana-boy.com"}/about`,
+    siteName: "hana-boy Blog",
+    images: [
+      {
+        url: `${process.env.NEXT_PUBLIC_BASE_URL || "https://hana-boy.com"}/og-about.png`,
+        width: 1200,
+        height: 630,
+        alt: "hana-boy - SREエンジニア",
+      },
+    ],
+    locale: "ja_JP",
+    type: "profile",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "自己紹介 | hana-boy Blog",
+    description: "エンジニアのhana-boyの自己紹介ページ",
+    images: [`${process.env.NEXT_PUBLIC_BASE_URL || "https://hana-boy.com"}/og-about.png`],
+    creator: "@hana_boy_",
+  },
+}
 
 export default function AboutPage() {
   return (

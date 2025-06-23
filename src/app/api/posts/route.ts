@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server"
-import { getBlogPosts } from "@/lib/microcms"
+import { getBlogPosts, parseTagsString } from "@/lib/microcms"
 
 export async function GET(request: Request) {
   try {
@@ -12,7 +12,7 @@ export async function GET(request: Request) {
         title: post.title,
         excerpt: post.excerpt,
         publishedAt: post.publishedAt,
-        tags: post.tags?.split(',').map((tag: string) => tag.trim()) ?? [],
+        tags: parseTagsString(post.tags), // 文字列を配列に変換
         author: post.author,
       })),
       totalCount: response.totalCount,
