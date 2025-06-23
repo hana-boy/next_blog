@@ -42,6 +42,23 @@ export interface BlogResponse {
   limit: number
 }
 
+// タグ文字列を配列に変換するユーティリティ関数
+export const parseTagsString = (tagsString: string): string[] => {
+  if (!tagsString || typeof tagsString !== "string") {
+    return []
+  }
+
+  return tagsString
+    .split(",")
+    .map((tag) => tag.trim())
+    .filter((tag) => tag.length > 0)
+}
+
+// タグ配列を文字列に変換するユーティリティ関数（必要に応じて）
+export const stringifyTags = (tags: string[]): string => {
+  return tags.join(", ")
+}
+
 // 記事一覧を取得
 export const getBlogPosts = async (limit = 10, offset = 0): Promise<BlogResponse> => {
   try {
